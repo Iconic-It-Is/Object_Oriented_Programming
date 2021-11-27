@@ -99,7 +99,7 @@ class teacher : public staff //First hierarchy -1
 		{
 			cout<<"Teacher Subject is: "<<this->subject
 				<<"\nPublication Name is: "<<publication<<"\n";
-			this->showStaff(); //Since class inherted from Staff Base Class
+			this->showStaff(); //Since class inherited from Staff Base Class
 			}
 	};
 
@@ -131,7 +131,7 @@ class typist : public staff //First hierarchy -2
 		auto showTypist()
 		{
 			cout<<"Typist speed is: "<<this->speed<<" wpm\n";
-			this->showStaff(); //Since class inherted from Staff Base Class
+			this->showStaff(); //Since class inherited from Staff Base Class
 			}
 	};
 
@@ -157,7 +157,7 @@ class officer : public staff //First hierarchy -3
 		auto showOfficer()
 		{
 			cout<<"Officer Grade is: "<<this->grade<<" \n";
-			this->showStaff(); //Since class inherted from Staff Base Class
+			this->showStaff(); //Since class inherited from Staff Base Class
 			}
 	};
 
