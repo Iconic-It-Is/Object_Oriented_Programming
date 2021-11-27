@@ -1,9 +1,9 @@
 /*
  * CONSTRUCTOR INVOKATION HELP GUIDE
- * Provide arguments for Derived class followed by arguments for Base class
- * Provide arguments for Derived class and set Base class variables later through member functions
+ * Provide arguments for Derived class followed by arguments for Base class OR
+ * Provide arguments for Derived class and set Base class variables later through member functions OR
  * Don't provide arguments at all, use member functions to set and update Base as well as Derived variables
- * */
+ */
 
 #include <iostream>
 #include <string>
@@ -61,7 +61,7 @@ class teacher : public staff //First hierarchy -1
 {
 	protected:
 		//Declarations
-		string subject, 
+		string subject,
 				publication;
 	public:
 		//Initializations
@@ -81,7 +81,7 @@ class teacher : public staff //First hierarchy -1
 			this->subject = Subject;
 			this->publication = Publication;
 			}
-		auto setTeacher(string Subject) //Overloaded function 
+		auto setTeacher(string Subject) //Overloaded function
 		{
 			//Under the assumption that all subject lengths are less than 10 and all publication lengths are greater than 10
 			if(Subject.length() < 10)
@@ -185,7 +185,7 @@ class regular : public typist //Second hierarchy -1
 class casual : public typist //Second hierarchy -2
 {
 	protected:
-		//dDeclarations
+		//Declarations
 		int dailyWages;
 	public:
 		//Initializations
@@ -217,7 +217,7 @@ class casual : public typist //Second hierarchy -2
 int main()
 {
 	cout<<"Set DataBase -\n";
-	
+
 	// Staff DB
 	staff obj1, obj2(352, "Mohit");
 	obj2.showStaff();
@@ -226,7 +226,7 @@ int main()
 	obj2.setStaff("Meenakshi Ma'am");
 	obj2.showStaff();
 	cout<<"DataBase Members: "<<obj2.returnMembers()<<"\n\n";
-	
+
 	//Teacher DB
 	teacher obj3, obj4("oops", "Harley and sons");
 	obj3.setTeacher("Maths");
@@ -234,29 +234,29 @@ int main()
 	obj3.setStaff(353, "Maths teacher");
 	obj3.showTeacher();
 	cout<<"DataBase Members: "<<obj3.returnMembers()<<"\n\n";
-	
+
 	//Typist DB
 	typist obj5, obj6(554);
 	obj6.setStaff(352, "Mangal Singh");
 	obj6.showTypist();
 	cout<<"DataBase Members: "<<obj6.returnMembers()<<"\n\n";
-	
+
 	//Officer DB
 	officer obj7, obj8(9, 353, "Officer Staff");
 	obj8.showOfficer();
 	cout<<"DataBase Members: "<<obj8.returnMembers()<<"\n\n";
-	
+
 	//Regular DB
 	regular obj9; //parenthesis not required to invoke a constructor with no parameters
 	obj9.setRegular(40, 352, "Meenakshi");
 	obj9.showStaff();
 	cout<<"DataBase Members: "<<obj9.returnMembers()<<"\n\n";
-	
+
 	//Casual DB
 	casual obj10;
 	obj10.setCasual(150, 35, 325, "Jitendra singh");
 	obj10.showCasual();
 	cout<<"DataBase Members: "<<obj10.returnMembers()<<"\n\n";
-	
+
 	return EXIT_SUCCESS;
 	}
